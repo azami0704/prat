@@ -1,0 +1,230 @@
+:root {
+    --border-fix:1px;
+    --black:#000;
+    --white:#FFF;
+    --gray:#ccc;
+    --light-gray:#eee;
+    --main:#0af;
+    --main-op3:rgba(0, 170, 255,.3);
+    --main-op1:rgba(0, 170, 255,.1);
+    --danger:rgb(255,0,0);
+    --success:rgb(0, 128, 0);
+}
+body:has(.info){
+    padding-top: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--black);
+}
+ul,ol,li {
+    list-style: none;
+}
+.container {
+    padding-top: 24px;
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container.info {
+    width: fit-content;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 3px 5px 3px #ddd;
+}
+
+.info-table {
+    width: fit-content;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.student-list {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.student-list td,
+.student-list th {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.student-list tr:nth-child(even) td {
+    background-color: var(--main-op1);
+}
+
+.student-list th {
+    background-color: var(--main);
+}
+
+nav {
+    margin: 8px auto;
+}
+
+.class-list {
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.class-list::-webkit-scrollbar {
+    /* display: none; */
+    width: 0;
+    height: 0;
+}
+nav a,
+.class-list a{
+    white-space: nowrap;
+    padding: 8px 16px;
+    margin-right: 8px;
+    background-color: var(--main);
+    border-radius: 30px;
+    color: var(--white);
+    border: 1px solid transparent;
+}
+nav a:hover,
+.class-list a:hover {
+    color: var(--main);
+    background-color: var(--white);
+    border-color: currentColor;
+}
+
+.class-list {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.class-list a {
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn{
+    font-size: 24px;
+    font-weight: 700;
+    padding: 4px 12px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    color: var(--white);
+    border: 1px solid transparent;
+}
+.del-form.btn:hover {
+    background-color: var(--white);
+    color: var(--danger);
+    border: 1px solid currentColor;
+}
+.del-form {
+    background-color: var(--danger);
+}
+.cancel {
+    background-color: var(--main);
+}
+.cancel.btn:hover {
+    background-color: var(--white);
+    color: var(--main);
+    border: 1px solid currentColor;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.pagination li {
+    color: var(--main);
+    border: var(--border-fix) solid #ccc;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    /* margin-left: calc(var(--border-fix) * -1); */
+    margin-right: calc(var(--border-fix) * -1);
+}
+.pagination a {
+    width: 100%;
+    line-height: 28px;
+}
+.pagination a:hover {
+    background-color: var(--main-op3);
+}
+
+.pagination :is(.active, .active:hover){
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--main);
+}
+.pagination li:has(.active) {
+    border-color: var(--main);
+}
+.student-list {
+    margin: 24px auto 16px;
+}
+
+.student-list td a {
+    font-size: 16px;
+    font-size: 400;
+    color: var(--white);
+}
+
+.student-list td a+a {
+    margin-left: 4px;
+}
+
+.disable {
+    pointer-events: none;
+    cursor: auto;
+    opacity: .3;
+}
+
+.student-table {
+    min-height: 390px;
+    min-width: 500px;
+}
+
+.btn-box {
+    text-align: center;
+    padding-block: 16px;
+}
+
+.back-btn:hover {
+    color: var(--main);
+}
+
+.attention {
+    width: 100%;
+    font-size: 24px;
+    background-color: rgb(255, 255, 180);
+    animation: del-fade 3s .1s 1;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+@keyframes del-fade {
+    12.5%{        
+        opacity: 1;
+        height: 100%;
+    }
+    87.5%{
+        opacity: 1;
+        height: 50%;
+    }
+    100%{
+        opacity: 0;
+        height: 0%;
+    }
+}
+
